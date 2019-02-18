@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h
+
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h
+
 C:/Users/Korisnik/CLionProjects/DesignPatterns/main.cpp
 iostream
 -
@@ -15,4 +19,8 @@ sstream
 -
 vector
 -
+Introduction.h
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h
+Builder.h
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h
 

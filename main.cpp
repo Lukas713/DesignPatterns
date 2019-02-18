@@ -3,30 +3,20 @@
 #include <sstream>
 #include <vector>
 
+#include "Introduction.h"
 #include "Builder.h"
 
+
 int main() {
-    /**
-     * Without builder
-     */
-    std::string words[] = {"hello", "world"};
-    std::ostringstream oss;
 
-    oss << "<ul>";
-    for(auto w : words){
-        oss << "<li>" << w << "</li>";
-    }
-    oss << "</ul>";
-    std::cout << oss.str();
+    Duck* a = new BigDuck();
+    Duck* b = new SmallDuck();
+    Duck* c = new MediumDuck();
 
-    /**
-     * using builder
-     * */
-     std::cout << "\n" << "builder: " << "\n";
-     HtmlBuilder a("ul");
-     a.addChild("li", "hello");
-     a.addChild("li", "world");
-     std::cout << a.str();
-
+    a->action();
+    std::cout << '\n';
+    b->action();
+    std::cout << '\n';
+    c->action();
     return 0;
 }
