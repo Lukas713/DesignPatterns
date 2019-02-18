@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/EncapsulateWhatVaries.h">
+		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h">
 			<Option target="DesignPatterns"/>
 		</Unit>
 		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/main.cpp">
