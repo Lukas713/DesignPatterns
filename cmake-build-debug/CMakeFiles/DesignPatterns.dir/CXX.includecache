@@ -10,6 +10,8 @@ C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h
 
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h
 
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Strategy.h
+
 C:/Users/Korisnik/CLionProjects/DesignPatterns/main.cpp
 iostream
 -
@@ -23,4 +25,6 @@ Introduction.h
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h
 Builder.h
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h
+Strategy.h
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Strategy.h
 

@@ -5,18 +5,16 @@
 
 #include "Introduction.h"
 #include "Builder.h"
+#include "Strategy.h"
 
 
 int main() {
 
-    Duck* a = new BigDuck();
-    Duck* b = new SmallDuck();
-    Duck* c = new MediumDuck();
+    Context* a = new Context(new StrategyA);
+    a->setStrategy(new StrategyB);
 
-    a->action();
-    std::cout << '\n';
-    b->action();
-    std::cout << '\n';
-    c->action();
+    a->algorithmAction();
+
+
     return 0;
 }
