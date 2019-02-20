@@ -91,6 +91,9 @@
 		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/Strategy.h">
 			<Option target="DesignPatterns"/>
 		</Unit>
+		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/Test.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
 		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/main.cpp">
 			<Option target="DesignPatterns"/>
 		</Unit>

@@ -12,6 +12,8 @@ C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h
 
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Strategy.h
 
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Test.h
+
 C:/Users/Korisnik/CLionProjects/DesignPatterns/main.cpp
 iostream
 -
@@ -21,10 +23,16 @@ sstream
 -
 vector
 -
+limits
+-
+math.h
+-
 Introduction.h
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h
 Builder.h
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h
 Strategy.h
 C:/Users/Korisnik/CLionProjects/DesignPatterns/Strategy.h
+Test.h
+C:/Users/Korisnik/CLionProjects/DesignPatterns/Test.h
 

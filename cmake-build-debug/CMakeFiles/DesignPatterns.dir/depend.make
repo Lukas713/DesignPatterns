@@ -4,5 +4,6 @@
 CMakeFiles/DesignPatterns.dir/main.cpp.obj: ../Builder.h
 CMakeFiles/DesignPatterns.dir/main.cpp.obj: ../Introduction.h
 CMakeFiles/DesignPatterns.dir/main.cpp.obj: ../Strategy.h
+CMakeFiles/DesignPatterns.dir/main.cpp.obj: ../Test.h
 CMakeFiles/DesignPatterns.dir/main.cpp.obj: ../main.cpp
 
