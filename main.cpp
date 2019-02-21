@@ -4,19 +4,27 @@
 #include <vector>
 #include <limits>
 #include <math.h>
+#include <algorithm>
 
 #include "Introduction.h"
 #include "Builder.h"
 #include "Strategy.h"
+#include "Observer.h"
 #include "Test.h"
+
 
 
 int main() {
 
-    QuadraticEquation* a = new QuadraticEquation;
-    a->choseStrategy(REAL);
-    a->insertValues(0, 0, 0);
-    a->calculateX();
+    WeatherData* wd = new WeatherData();
+    wd->setMeasurements(12, 21, 41);
+
+    IObserver* current = new CurrentObserver(wd);
+    IObserver* forecase = new ForecastObserver(wd);
+    IObserver* statistics = new StatisticsObserver(wd);
+    wd->notifyObjects();
+
+
 
     return 0;
 }
