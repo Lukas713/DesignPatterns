@@ -8,6 +8,13 @@
 #endif //DESIGNPATTERNS_OBSERVER_H
 /**
  * INTERFACE DECLARATIONS
+ *
+ * ISubject that defines method which registers, removes and notifies observers.
+ * ISubject implementation, 'WeatherData' that collects temperature, humidity and air pressure from "sensors".
+ * IObserver interface that defines update method for concrete observer classes which subscribes to concrete
+ * ISubject implementation WeatherData. WeatherData notifies objects (inside vector) when state has changed.
+ * Concrete observers displays different shapes of weather infos, by inheriting and overriding display() from
+ * IDisplay class.
  */
 
 /**
