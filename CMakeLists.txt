@@ -3,4 +3,4 @@ project(DesignPatterns)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DesignPatterns main.cpp Builder.h Introduction.h Strategy.h Test.h Observer.h)
+add_executable(DesignPatterns main.cpp Builder.h Introduction.h Strategy.h Test.h Observer.h Decorator.h)

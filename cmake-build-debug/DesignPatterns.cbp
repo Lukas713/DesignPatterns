@@ -85,6 +85,9 @@
 		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/Builder.h">
 			<Option target="DesignPatterns"/>
 		</Unit>
+		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/Decorator.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
 		<Unit filename="C:/Users/Korisnik/CLionProjects/DesignPatterns/Introduction.h">
 			<Option target="DesignPatterns"/>
 		</Unit>

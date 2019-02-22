@@ -10,20 +10,18 @@
 #include "Builder.h"
 #include "Strategy.h"
 #include "Observer.h"
+#include "Decorator.h"
 #include "Test.h"
 
 
 
 int main() {
 
-    WeatherData* wd = new WeatherData();
-    wd->setMeasurements(12, 21, 41);
-
-    IObserver* current = new CurrentObserver(wd);
-    IObserver* forecase = new ForecastObserver(wd);
-    IObserver* statistics = new StatisticsObserver(wd);
-    wd->notifyObjects();
-
+    Coffe* coffee = new Coffe();
+    Cream* creamOne = new Cream(coffee);
+    Cream* creamTwo = new Cream(creamOne);
+    Chocolate* chocolate = new Chocolate(creamTwo);
+    std::cout << "Price of coffee with double cream = " << chocolate->cost() << " €";
 
 
     return 0;
