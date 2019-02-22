@@ -7,61 +7,41 @@
 
 #endif //DESIGNPATTERNS_TEST_H
 
-enum strategy {ORDINARY, REAL};
-
-class DiscriminantStrategy {
+class IFlower {
 public:
-    virtual double checkResult(double x) = 0;
+    virtual void str() = 0;
 };
 
-class OrdinaryDiscriminant : public DiscriminantStrategy {
+class Rose : public IFlower {
 public:
-    double checkResult(double x) override {
-        std::cout << "Its ok";
-        return x;
+    void str() override {
+        std::cout << "I am a Rose " ;
     }
 };
 
-class RealDiscriminant : public DiscriminantStrategy {
+class Color : public IFlower {
+protected:
+    IFlower* f;
+};
+
+class Red : public Color {
 public:
-    double checkResult(double x) override {
-        if(x < 0){
-            std::cout << "It's not ok!";
-            return std::numeric_limits<double>::quiet_NaN();
-        }
-        return x;
+    Red(IFlower*& f){
+        this->f = f;
+    }
+    void str() override {
+        f->str();
+        std::cout << " that is red";
     }
 };
 
-class QuadraticEquation {
-    double a, b, c;
-    double x;
-    DiscriminantStrategy* ds;
+class Blue : public Color {
 public:
-    void insertValues(double a, double b, double c){
-        this->a = a;
-        this->b = b;
-        this->c = c;
+    Blue(IFlower*& f){
+        this->f = f;
     }
-    void choseStrategy(strategy s){
-       switch (s){
-            case REAL:
-                this->ds = new RealDiscriminant();
-                break;
-            case ORDINARY:
-                this->ds = new OrdinaryDiscriminant();
-                break;
-           default:
-               break;
-        }
+    void str() override {
+        f->str();
+        std::cout << " that is blue";
     }
-    void calculateX(){
-        double result = (-(this->b) + sqrt((this->b * this->b) - 4 * this->a * this->c) / 2 * this->a);
-        this->x = ds->checkResult(this->x);
-        if(!this->x){
-            std::cout << "\n" << this->x;
-        }
-    }
-
 };
-
