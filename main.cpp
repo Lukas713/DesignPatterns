@@ -17,11 +17,12 @@
 
 int main() {
 
-    Coffe* coffee = new Coffe();
-    Cream* creamOne = new Cream(coffee);
-    Cream* creamTwo = new Cream(creamOne);
-    Chocolate* chocolate = new Chocolate(creamTwo);
-    std::cout << "Price of coffee with double cream = " << chocolate->cost() << " €";
+    IFlower* rose = new Rose();
+    IFlower* redRose = new Red(rose);
+    IFlower* redRedRose = new Red(redRose);
+    IFlower* blueRedRedRose = new Blue(redRedRose);
+
+    blueRedRedRose->str();
 
 
     return 0;
