@@ -1,0 +1,8 @@
+//
+// Created by Korisnik on 26/02/2019.
+//
+
+#ifndef DESIGNPATTERNS_SINGLETON_H
+#define DESIGNPATTERNS_SINGLETON_H
+
+#endif //DESIGNPATTERNS_SINGLETON_H

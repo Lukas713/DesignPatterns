@@ -86,4 +86,9 @@
       <td>Provide an interface for creating families of related or dependent objects without specifying their concrete classes.</td>
       <td><a href="https://www.uml-diagrams.org/examples/class-example-abstract-factory.png">Click</a></td>
     </tr>
+        <tr>
+          <td><a href="https://github.com/Lukas713/DesignPatterns/blob/master/Singleton.h">Singleton</a></td>
+          <td>Ensure a class has only one instance, and provide a global point of access to it.</td>
+          <td><a href="https://www.tutorialspoint.com/design_pattern/images/singleton_pattern_uml_diagram.jpg">Click</a></td>
+        </tr>
 </table>
