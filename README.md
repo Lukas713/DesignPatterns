@@ -35,7 +35,7 @@
   </tr>
   <tr>
     <td><a href="https://github.com/Lukas713/DesignPatterns/blob/master/Observer.h">Observer</a></td>
-    <td> maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.</td>
+    <td>maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.</td>
     <td><a href="https://www.bogotobogo.com/DesignPatterns/images/observer/observer_pattern.gif">Click</a></td>
   </tr>
 </table>
@@ -71,4 +71,19 @@
       Diagram
     </th>
   </tr>
+  <tr>
+    <td><a href="https://github.com/Lukas713/DesignPatterns/blob/master/SimpleFactory.h">SimpleFactoryMethod</a></td>
+    <td>Allows interfaces for creating objects without exposing the object creation logic to the client</td>
+    <td><a href="https://4.bp.blogspot.com/-eCBmRuAvg6U/WlhH_TPitYI/AAAAAAAABqE/BTb6rlDnA5k_GPKbAyMo6JmIHUK3oBa8wCLcBGAs/s1600/factory_design_pattern.png">Click</a></td>
+  </tr>
+    <tr>
+      <td><a href="https://github.com/Lukas713/DesignPatterns/blob/master/FactoryMethod.h">FactoryMethod</a></td>
+      <td>Allows interfaces for creating objects, but allow subclasses to determine which class to instantiate.</td>
+      <td><a href="http://best-practice-software-engineering.ifs.tuwien.ac.at/patterns/images/FactoryMethod.jpg">Click</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Lukas713/DesignPatterns/blob/master/AbstractFactory.h">AbstractFactoryPattern</a></td>
+      <td>Provide an interface for creating families of related or dependent objects without specifying their concrete classes.</td>
+      <td><a href="https://www.uml-diagrams.org/examples/class-example-abstract-factory.png">Click</a></td>
+    </tr>
 </table>
