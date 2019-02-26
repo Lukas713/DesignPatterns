@@ -65,7 +65,7 @@ void Creator::orderFactory(PRODUCTS x){
     Product* product = NULL;
     product = ProductFactory::createFactory(x);
     product->methodOne();
-    product->methodTwo(); 
+    product->methodTwo();
 }
 Product* ProductFactory::createFactory(PRODUCTS x){
 
