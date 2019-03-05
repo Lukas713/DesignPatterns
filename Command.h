@@ -59,6 +59,7 @@ public:
 class Command {
 public:
     virtual void execute() = 0;
+    virtual void undo() = 0;
     virtual std::string getClassName() = 0;
 };
 
@@ -69,6 +70,7 @@ public:
  class NoCommand : public Command {
  public:
      void execute() override {}
+     void undo() override {}
      std::string getClassName() override{
          return "NoCommand";
      }
@@ -80,6 +82,9 @@ class LightOnCommand : public Command {
 public:
     LightOnCommand(Light* light);
     void execute() override;
+    void undo() override {
+        this->light->off();
+    }
     std::string getClassName() override{
         return "LightOnCommand";
     }
@@ -91,6 +96,9 @@ class LightOffCommand : public Command {
 public:
     LightOffCommand(Light* light);
     void execute() override;    //performs action
+    void undo() override {
+        this->light->on();
+    }
     std::string getClassName() override{
         return "LightOffCommand";
     }
@@ -101,6 +109,9 @@ class DoorsOpenCommand : public Command {
 public:
     DoorsOpenCommand(Doors* doors);
     void execute() override;
+    void undo() override {
+        this->doors->close();
+    }
     std::string getClassName() override{
         return "DoorsOpenCommand";
     }
@@ -111,6 +122,9 @@ class DoorsCloseCommand : public Command {
 public:
     DoorsCloseCommand(Doors* doors);
     void execute() override;
+    void undo() override {
+        this->doors->open();
+    }
     std::string getClassName() override{
         return "DoorsCloseCommand";
     }
@@ -124,6 +138,9 @@ public:
     }
     void execute() override {
         this->stereo->on();
+    }
+    void undo() override {
+        this->stereo->off();
     }
     std::string getClassName() override{
         return "StereoOnCommand";
@@ -139,6 +156,9 @@ public:
     void execute() override {
         this->stereo->off();
     }
+    void undo() override {
+        this->stereo->on();
+    }
     std::string getClassName() override{
         return "StereoOffCommand";
     }
@@ -153,6 +173,9 @@ public:
     void execute() override {
         this->tv->on();
     }
+    void undo() override {
+        this->tv->off();
+    }
     std::string getClassName() override{
         return "TVOnCommand";
     }
@@ -165,7 +188,10 @@ public:
         this->tv = tv;
     }
     void execute() override {
-        this->tv->off();
+        this->tv->on();
+    }
+    void undo() override {
+        this->tv->on();
     }
     std::string getClassName() override{
         return "TVOffCommand";
@@ -191,6 +217,7 @@ class Invoker {
     int slots;
     std::vector<Command*> onButtons;
     std::vector<Command*> offButtons;
+    Command* undoButton;
 
 public:
     Invoker(int slots){
@@ -210,9 +237,14 @@ public:
     }
     void pressOnButton(int slot){
         this->onButtons[slot]->execute();
+        this->undoButton = this->onButtons[slot];
     }
     void pressOffButton(int slot){
         this->offButtons[slot]->execute();
+        this->undoButton = this->offButtons[slot];
+    }
+    void pressUndoButton() {
+        this->undoButton->undo();
     }
     void displayRemoter(){
         for(int i=0; i<this->slots; ++i){

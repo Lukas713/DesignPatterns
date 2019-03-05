@@ -37,6 +37,7 @@ int main() {
 
     remote->pressOnButton(0);
     remote->pressOffButton(0);
+    remote->pressUndoButton(); 
 
     return 0;
 }

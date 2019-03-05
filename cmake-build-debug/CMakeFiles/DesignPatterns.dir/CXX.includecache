@@ -6,15 +6,47 @@
 
 #IncludeRegexTransform: 
 
+/home/lukas/CLionProjects/DesignPatterns/Builder.h
+
 /home/lukas/CLionProjects/DesignPatterns/Command.h
+
+/home/lukas/CLionProjects/DesignPatterns/Decorator.h
+
+/home/lukas/CLionProjects/DesignPatterns/Introduction.h
+
+/home/lukas/CLionProjects/DesignPatterns/Observer.h
+
+/home/lukas/CLionProjects/DesignPatterns/Strategy.h
+
+/home/lukas/CLionProjects/DesignPatterns/Test.h
 
 /home/lukas/CLionProjects/DesignPatterns/main.cpp
 iostream
 -
-typeinfo
+string
+-
+sstream
 -
 vector
 -
+limits
+-
+math.h
+-
+algorithm
+-
+Introduction.h
+/home/lukas/CLionProjects/DesignPatterns/Introduction.h
+Builder.h
+/home/lukas/CLionProjects/DesignPatterns/Builder.h
+Strategy.h
+/home/lukas/CLionProjects/DesignPatterns/Strategy.h
+Observer.h
+/home/lukas/CLionProjects/DesignPatterns/Observer.h
+Decorator.h
+/home/lukas/CLionProjects/DesignPatterns/Decorator.h
 Command.h
 /home/lukas/CLionProjects/DesignPatterns/Command.h
+Test.h
+/home/lukas/CLionProjects/DesignPatterns/Test.h
 
