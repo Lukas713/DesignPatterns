@@ -1,0 +1,3 @@
+/home/lukas/CLionProjects/DesignPatterns/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lukas/CLionProjects/DesignPatterns/cmake-build-debug/CMakeFiles/DesignPatterns.dir
+/home/lukas/CLionProjects/DesignPatterns/cmake-build-debug/CMakeFiles/edit_cache.dir

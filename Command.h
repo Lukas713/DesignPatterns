@@ -1,4 +1,6 @@
-#include <typeinfo>
+//
+// Created by lukas on 05.03.19..
+//
 
 #ifndef DESIGNPATTERNS_COMMAND_H
 #define DESIGNPATTERNS_COMMAND_H
@@ -6,9 +8,9 @@
 #endif //DESIGNPATTERNS_COMMAND_H
 
 /**
- * Reciever
- * Reciever Knows how to perform action that will carry out the request
- */
+* Reciever
+* Reciever Knows how to perform action that will carry out the request
+*/
 class Light {
 public:
     void on(){ //possible request
@@ -57,18 +59,30 @@ public:
 class Command {
 public:
     virtual void execute() = 0;
+    virtual std::string getClassName() = 0;
 };
 
 /**
  * Concrete Commands
  * client creates concrete command and settings its receiver
  */
+ class NoCommand : public Command {
+ public:
+     void execute() override {}
+     std::string getClassName() override{
+         return "NoCommand";
+     }
+ };
+
 class LightOnCommand : public Command {
     Light* light;
 
 public:
     LightOnCommand(Light* light);
     void execute() override;
+    std::string getClassName() override{
+        return "LightOnCommand";
+    }
 };
 
 class LightOffCommand : public Command {
@@ -77,6 +91,9 @@ class LightOffCommand : public Command {
 public:
     LightOffCommand(Light* light);
     void execute() override;    //performs action
+    std::string getClassName() override{
+        return "LightOffCommand";
+    }
 };
 
 class DoorsOpenCommand : public Command {
@@ -84,6 +101,9 @@ class DoorsOpenCommand : public Command {
 public:
     DoorsOpenCommand(Doors* doors);
     void execute() override;
+    std::string getClassName() override{
+        return "DoorsOpenCommand";
+    }
 };
 
 class DoorsCloseCommand : public Command {
@@ -91,6 +111,9 @@ class DoorsCloseCommand : public Command {
 public:
     DoorsCloseCommand(Doors* doors);
     void execute() override;
+    std::string getClassName() override{
+        return "DoorsCloseCommand";
+    }
 };
 
 class StereoOnCommand : public Command {
@@ -101,6 +124,9 @@ public:
     }
     void execute() override {
         this->stereo->on();
+    }
+    std::string getClassName() override{
+        return "StereoOnCommand";
     }
 };
 
@@ -113,6 +139,9 @@ public:
     void execute() override {
         this->stereo->off();
     }
+    std::string getClassName() override{
+        return "StereoOffCommand";
+    }
 };
 
 class TVOnCommand : public Command {
@@ -124,7 +153,9 @@ public:
     void execute() override {
         this->tv->on();
     }
-
+    std::string getClassName() override{
+        return "TVOnCommand";
+    }
 };
 
 class TVOffCommand : public Command {
@@ -135,6 +166,9 @@ public:
     }
     void execute() override {
         this->tv->off();
+    }
+    std::string getClassName() override{
+        return "TVOffCommand";
     }
 };
 
@@ -154,20 +188,25 @@ public:
 
 
 class Invoker {
+    int slots;
     std::vector<Command*> onButtons;
     std::vector<Command*> offButtons;
 
 public:
-    Invoker(int slots = 1){
+    Invoker(int slots){
+        this->slots = slots;
+        this->onButtons = std::vector<Command*>(slots);
+        this->offButtons = std::vector<Command*>(slots);
+
         for(int i=0; i<slots; ++i){
-            onButtons[i] = NULL;
-            offButtons[i] = NULL;
+            onButtons[i] = new NoCommand();
+            offButtons[i] = new NoCommand();
         }
+        std::cout << "Buttons constructed!\n";
     }
     void setCommand(int slot, Command* onButton, Command* offButton){
         this->onButtons[slot] = onButton;
         this->offButtons[slot] = offButton;
-        this->displayRemoter();
     }
     void pressOnButton(int slot){
         this->onButtons[slot]->execute();
@@ -175,13 +214,9 @@ public:
     void pressOffButton(int slot){
         this->offButtons[slot]->execute();
     }
-
-protected:
     void displayRemoter(){
-        std::vector<Command*>::iterator p;
-        int i=0;
-        for(p = onButtons.begin(); p != onButtons.end(); ++p){
-            std::cout << i++ << ": " << typeid((*p)).name() << "\n";
+        for(int i=0; i<this->slots; ++i){
+            std::cout << i << ": " << this->onButtons[i]->getClassName() << " - " << this->offButtons[i]->getClassName() << "\n";
         }
     }
 };
@@ -236,17 +271,27 @@ void SimpleRemoteControl::pressButton(){
  *
  *
  *
-   Command* openDoors = new DoorsOpenCommand(new Doors());
-   SimpleRemoteControl* remoter = new SimpleRemoteControl();
-   remoter->setCommand(openDoors);
-   remoter->pressButton();
+    Command* lightOff = new LightOffCommand(new Light());
+    Command* lightOn = new LightOnCommand(new Light());
 
-   std::cout << "\n-------------------------------------------------------------------------------------\n";
+    Command* musicOn = new StereoOnCommand(new Stereo());
+    Command* musicOff = new StereoOffCommand(new Stereo());
 
-    Command* lightsOn = new LightOnCommand(new Light());
-   remoter->setCommand(lightsOn);
-   remoter->pressButton();
-    Command* lightsOff = new LightOffCommand(new Light());
-   remoter->setCommand(lightsOff);
-   remoter->pressButton();
+    Command* tvOn = new TVOnCommand(new TV());
+    Command* tvOff = new TVOffCommand(new TV());
+
+    Command* doorsOpen = new DoorsOpenCommand(new Doors());
+    Command* doorsClose = new DoorsCloseCommand(new Doors());
+
+    Invoker* remote = new Invoker(4);
+
+    remote->setCommand(0, lightOn, lightOff);
+    remote->setCommand(1, musicOn, musicOff);
+    remote->setCommand(2, tvOn, tvOff);
+    remote->setCommand(3, doorsOpen, doorsClose);
+
+    remote->displayRemoter();
+
+    remote->pressOnButton(1);
+    remote->pressOffButton(1);
   */
