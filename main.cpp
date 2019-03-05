@@ -11,19 +11,32 @@
 #include "Strategy.h"
 #include "Observer.h"
 #include "Decorator.h"
+#include "Command.h"
 #include "Test.h"
-
-
 
 int main() {
 
-    IFlower* rose = new Rose();
-    IFlower* redRose = new Red(rose);
-    IFlower* redRedRose = new Red(redRose);
-    IFlower* blueRedRedRose = new Blue(redRedRose);
+    Command* lightOff = new LightOffCommand(new Light());
+    Command* lightOn = new LightOnCommand(new Light());
 
-    blueRedRedRose->str();
+    Command* musicOn = new StereoOnCommand(new Stereo());
+    Command* musicOff = new StereoOffCommand(new Stereo());
 
+    Command* tvOn = new TVOnCommand(new TV());
+    Command* tvOff = new TVOffCommand(new TV());
+
+    Command* doorsOpen = new DoorsOpenCommand(new Doors());
+    Command* doorsClose = new DoorsCloseCommand(new Doors());
+
+    Invoker* remote = new Invoker(4);
+
+    remote->setCommand(0, lightOn, lightOff);
+    remote->setCommand(1, musicOn, musicOff);
+    remote->setCommand(2, tvOn, tvOff);
+    remote->setCommand(3, doorsOpen, doorsClose);
+
+    remote->pressOnButton(0);
+    remote->pressOffButton(0);
 
     return 0;
 }

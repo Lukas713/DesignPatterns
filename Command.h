@@ -1,3 +1,5 @@
+#include <typeinfo>
+
 #ifndef DESIGNPATTERNS_COMMAND_H
 #define DESIGNPATTERNS_COMMAND_H
 
@@ -24,6 +26,26 @@ public:
     }
     void close(){ //possible request
         std::cout << "Doors are closed!\n"; //response to request
+    }
+};
+
+class TV {
+public:
+    void on(){
+        std::cout << "TV is turned on!\n";
+    }
+    void off(){
+        std::cout << "TV is turned off!\n";
+    }
+};
+
+class Stereo {
+public:
+    void on(){
+        std::cout << "Stereo is turned on!\n";
+    }
+    void off(){
+        std::cout << "Stereo is turned off!\n";
     }
 };
 
@@ -71,6 +93,51 @@ public:
     void execute() override;
 };
 
+class StereoOnCommand : public Command {
+    Stereo* stereo;
+public:
+    StereoOnCommand(Stereo* stereo){
+        this->stereo = stereo;
+    }
+    void execute() override {
+        this->stereo->on();
+    }
+};
+
+class StereoOffCommand : public Command {
+    Stereo* stereo;
+public:
+    StereoOffCommand(Stereo* stereo){
+        this->stereo = stereo;
+    }
+    void execute() override {
+        this->stereo->off();
+    }
+};
+
+class TVOnCommand : public Command {
+    TV* tv;
+public:
+    TVOnCommand(TV* tv){
+        this->tv = tv;
+    }
+    void execute() override {
+        this->tv->on();
+    }
+
+};
+
+class TVOffCommand : public Command {
+    TV* tv;
+public:
+    TVOffCommand(TV* tv){
+        this->tv = tv;
+    }
+    void execute() override {
+        this->tv->off();
+    }
+};
+
 /**
  * Invoker
  * class that serves as remote with different requests.
@@ -85,6 +152,39 @@ public:
     void pressButton(); //perform execute() within concrete command
 };
 
+
+class Invoker {
+    std::vector<Command*> onButtons;
+    std::vector<Command*> offButtons;
+
+public:
+    Invoker(int slots = 1){
+        for(int i=0; i<slots; ++i){
+            onButtons[i] = NULL;
+            offButtons[i] = NULL;
+        }
+    }
+    void setCommand(int slot, Command* onButton, Command* offButton){
+        this->onButtons[slot] = onButton;
+        this->offButtons[slot] = offButton;
+        this->displayRemoter();
+    }
+    void pressOnButton(int slot){
+        this->onButtons[slot]->execute();
+    }
+    void pressOffButton(int slot){
+        this->offButtons[slot]->execute();
+    }
+
+protected:
+    void displayRemoter(){
+        std::vector<Command*>::iterator p;
+        int i=0;
+        for(p = onButtons.begin(); p != onButtons.end(); ++p){
+            std::cout << i++ << ": " << typeid((*p)).name() << "\n";
+        }
+    }
+};
 
 /**
  * METHOD DEFINITIONS
