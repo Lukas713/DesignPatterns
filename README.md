@@ -38,6 +38,11 @@
     <td>maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.</td>
     <td><a href="https://www.bogotobogo.com/DesignPatterns/images/observer/observer_pattern.gif">Click</a></td>
   </tr>
+    <tr>
+      <td><a href="https://github.com/Lukas713/DesignPatterns/blob/master/Command.h">Command</a></td>
+      <td>Encapsulate a request as an object, thereby letting you parametrize clients with different requests, queue or log requests, and support undoable operations.</td>
+      <td><a href="https://www.dofactory.com/images/diagrams/net/command.gif">Click</a></td>
+    </tr>
 </table>
 <h2>Structural</h2>
 <table>
