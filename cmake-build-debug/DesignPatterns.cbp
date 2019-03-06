@@ -84,7 +84,40 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/AbstractFactory.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Adapter.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Builder.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
 		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Command.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Decorator.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/FactoryMethod.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Introduction.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Observer.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/SimpleFactory.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Singleton.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Strategy.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Test.h">
 			<Option target="DesignPatterns"/>
 		</Unit>
 		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/main.cpp">

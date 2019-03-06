@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/home/lukas/CLionProjects/DesignPatterns/Adapter.h
+
 /home/lukas/CLionProjects/DesignPatterns/Builder.h
 
 /home/lukas/CLionProjects/DesignPatterns/Command.h
@@ -47,6 +49,8 @@ Decorator.h
 /home/lukas/CLionProjects/DesignPatterns/Decorator.h
 Command.h
 /home/lukas/CLionProjects/DesignPatterns/Command.h
+Adapter.h
+/home/lukas/CLionProjects/DesignPatterns/Adapter.h
 Test.h
 /home/lukas/CLionProjects/DesignPatterns/Test.h
 
