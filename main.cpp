@@ -1,19 +1,4 @@
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
-#include <limits>
-#include <math.h>
-#include <algorithm>
-
-#include "Introduction.h"
-#include "Builder.h"
-#include "Strategy.h"
-#include "Observer.h"
-#include "Decorator.h"
-#include "Command.h"
-#include "Adapter.h"
-#include "Test.h"
+#include "headers.h"
 
 int main() {
 

@@ -120,6 +120,9 @@
 		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/Test.h">
 			<Option target="DesignPatterns"/>
 		</Unit>
+		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/headers.h">
+			<Option target="DesignPatterns"/>
+		</Unit>
 		<Unit filename="/home/lukas/CLionProjects/DesignPatterns/main.cpp">
 			<Option target="DesignPatterns"/>
 		</Unit>
